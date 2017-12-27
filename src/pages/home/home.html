@@ -1,14 +1,60 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content>
+    <div>
+        <div class="slides-toolbar" id="slides-toolbar">
+            <div class="slide-toolbar" *ngFor="let slideTab of iSlides" tappable (click)="onClickTab(slideTab)">
+                {{slideTab.title}}
+            </div>
+            <div class="scroll-bar"></div>
+        </div>
+
+        <div padding text center>
+            <h3>this is a advertise</h3>
+        </div>
+
+        <ion-slides centeredSlides="false" #mSlidesContent class="slides-content">
+
+            <ion-slide *ngFor="let slide of iSlides" class="slide-page">
+                <hoang-dao [data]="slide.data"></hoang-dao>
+            </ion-slide>
+
+        </ion-slides>
+    </div>
+
+
+
 </ion-content>
+
+<div class="slides-toolbar" id="slides-toolbar1">
+    <div class="slide-toolbar" *ngFor="let slideTab of iSlides1" tappable (click)="onClickTab1(slideTab)">
+        {{slideTab.title}}
+    </div>
+    <div class="scroll-bar"></div>
+</div>
+
+
+<div class="slide2">
+
+
+    <ion-slides centeredSlides="false" #slide1 class="slides-content">
+
+        <ion-slide *ngFor="let slide of iSlides1" class="slide-page">
+            <hoang-dao [data]="slide.data"></hoang-dao>
+        </ion-slide>
+
+    </ion-slides>
+</div>
